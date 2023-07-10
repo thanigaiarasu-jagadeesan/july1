@@ -1,8 +1,8 @@
-node('bulit-in') 
+node('deployment') 
 {
  stage('Continuous Deployment')
         {
-          sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war   ubuntu@172.31.26.217:/var/lib/tomcat8/webapps/qaenv.war'
+          sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war   ubuntu@34.218.225.60:.'
         }
     stage('Continuous Testing')
         {
@@ -10,6 +10,6 @@ node('bulit-in')
         }
     stage('Continuous Delivery')
         {
-          sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war   ubuntu@172.31.22.88:/var/lib/tomcat8/webapps/prodenv.war'
+          sh label: '', script: 'scp -i test.pem /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war   ubuntu@34.218.225.60:.'
         }
 }
