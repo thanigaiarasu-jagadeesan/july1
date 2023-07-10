@@ -1,8 +1,9 @@
-node('built-in') 
+ls
+node('download') 
 {
     stage('Continuous Download') 
 	{
-    git 'https://github.com/sunildevops77/maven.git'
+    git 'https://github.com/thanigaiarasu-jagadeesan/july1.git'
 	}
     stage('Continuous Build') 
 	{
