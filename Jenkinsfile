@@ -6,6 +6,6 @@ node('download')
 	}
     stage('Continuous Build') 
 	{
-    sh label: '', script: 'mvn package'
+    echo "mvn bulid"
 	}
    }
