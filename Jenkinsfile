@@ -1,4 +1,3 @@
-ls
 node('download') 
 {
     stage('Continuous Download') 
